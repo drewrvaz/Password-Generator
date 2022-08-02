@@ -16,16 +16,12 @@ upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N
 lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 //Only added the special characters that actually worked within the array
 symbol = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "`", "~", ":", ";", ",", "<", ">", "/", "?", "[", "]", "{", "}", "|"]
+
 //Write password to the #password input
 function writePassword() {
   
-  function passwordPrompt() {
-
-  }
-
   var password = generatePassword(); 
-  var passwordLength = parseInt(prompt("How many characters do you want your password to be? Must be at least 8 characters, and no more than 124 in length."));
-  var passLength = parseInt(passwordLength);
+  var passwordText = document.querySelector("#password");
 
   function generatePassword() {
     var length = passLength,
@@ -35,10 +31,7 @@ function writePassword() {
         retVal += charset.charAt(Math.floor(Math.random() * n));
     }
     return retVal;
-
   }
-
-  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
