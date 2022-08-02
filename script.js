@@ -3,6 +3,7 @@
 var generateBtn = document.querySelector("#generate");
 
 //Set the names of the variables required for password generation
+//Saw this in a YouTube video
 var passLength
 var passNumber
 var passSymbol
