@@ -27,22 +27,20 @@ function writePassword() {
   function generatePassword() {
     //Prompts the user to enter a character amount
     passLength = parseInt(prompt("How many characters would you like your password to be? It must be between 8 and 128 characters."));
-      if (!passLength) {
-        alert("You need to enter a value for length");
-      } else if (passLength < 8 || passLength > 128)
+    //If the user fails to enter a password length, this notify them that they need to answer the first prompt  
+    if (!passLength) {
+        alert("You need to enter a value for length"); 
+      }
+      //If the user fails to enter a number between 8 and 128, this will alert them that they need to choose a different number 
+      else if (passLength < 8 || passLength > 128)
       passLength = parseInt(prompt("This needs needs to be between 8 and 128 characters"));
-      else {
+      //Tells user to begin filling out the remaining requirements for the password once meeting the length requirements
+      else { 
         passNumber = prompt("Do you want this password include numbers?")
         passSymbol = prompt("Do you want this password to include special characters")
         passLower = prompt("Do you want this password to include lowercase letters")
         passUpper = prompt("Do you want this password to include uppercase letters?")
-      }
-        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"      
-        retVal = "";
-    for (var i = 0, n = charset.length; i < length; ++i) {
-        retVal += charset.charAt(Math.floor(Math.random() * n));
-    }
-    return retVal;
+      };
   }
 
   passwordText.value = password;
