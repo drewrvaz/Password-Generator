@@ -36,10 +36,10 @@ function writePassword() {
       passLength = parseInt(prompt("This needs needs to be between 8 and 128 characters"));
       //Tells user to begin filling out the remaining requirements for the password once meeting the length requirements
       else { 
-        passNumber = prompt("Do you want this password include numbers?")
-        passSymbol = prompt("Do you want this password to include special characters")
-        passLower = prompt("Do you want this password to include lowercase letters")
-        passUpper = prompt("Do you want this password to include uppercase letters?")
+        passNumber = confirm("Do you want this password include numbers?")
+        passSymbol = confirm("Do you want this password to include special characters")
+        passLower = confirm("Do you want this password to include lowercase letters")
+        passUpper = confirm("Do you want this password to include uppercase letters?")
       };
   }
 
