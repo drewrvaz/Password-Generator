@@ -36,13 +36,13 @@ function writePassword() {
       }
       // If the user fails to enter a number between 8 and 128, this will alert them that they need to choose a different number 
       else if (passLength < 8 || passLength > 128)
-      passLength = parseInt(prompt("This needs needs to be between 8 and 128 characters"));
+      passLength = parseInt(prompt("This needs to be between 8 and 128 characters"));
       // Tells user to begin filling out the remaining requirements for the password once meeting the length requirements. This utilizes confirm, which will allow bollean to be used to define the password requirements in the generator
       else { 
-        passNumber = confirm("Do you want this password include numbers?");
-        passSymbol = confirm("Do you want this password to include special characters");
-        passLower = confirm("Do you want this password to include lowercase letters");
-        passUpper = confirm("Do you want this password to include uppercase letters?");
+        passNumber = confirm("Do you want this password include numbers? Ok for yes, cancel for no.");
+        passSymbol = confirm("Do you want this password to include special characters? Ok for yes, cancel for no.");
+        passLower = confirm("Do you want this password to include lowercase letters? Ok for yes, cancel for no.");
+        passUpper = confirm("Do you want this password to include uppercase letters? Ok for yes, cancel for no.");
       };
 
       // Created an alert if the user doesn't choose any criteria for the password
@@ -86,6 +86,12 @@ function writePassword() {
         criteria = lowerCase;
       } else if (!passNumber && !passSymbol && !passLower && passUpper) {
         criteria = upperCase;
+      }
+
+      //For loop to choose random random characters for the length requested by the user
+      for (let i = 0; i < passLength, i++;) {
+        var chooseCriteria = criteria[Math.floor(Math.random() * criteria.length)];
+        password.push(chooseCriteria);
       }
   }
 
