@@ -11,7 +11,7 @@ var passLower;
 var passUpper;
 
 // Needed to create one more variable that would be able to hold arrays that will need to be combined in order to create the password
-var criteria
+var criteria;
 
 // Creating arrays for each of the variables required in the password. A positive response to the confirms from lines 42-45 will pull data from the array(s). A negative response will ignore the array(s)
 number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
@@ -92,7 +92,7 @@ function generatePassword() {
     //For loop to choose random characters for the length requested by the user
     for (var i = 0; i < passLength; i++) {
       var chooseCriteria = criteria[Math.floor(Math.random() * criteria.length)];
-      console.log(chooseCriteria)
+      console.log(chooseCriteria);
     }
     return chooseCriteria;
   }
