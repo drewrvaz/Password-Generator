@@ -13,7 +13,7 @@ var passUpper;
 // Needed to create one more variable that would be able to hold arrays that will need to be combined in order to create the password
 var criteria
 
-// Creating arrays for each of the variables required in the password. A positive response to the confirms from lines 39-42 will pull data from the array(s). A negative response will ignore the array(s)
+// Creating arrays for each of the variables required in the password. A positive response to the confirms from lines 42-45 will pull data from the array(s). A negative response will ignore the array(s)
 number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -32,7 +32,7 @@ function writePassword() {
     passLength = parseInt(prompt("How many characters would you like your password to be? It must be between 8 and 128 characters."));
     // If the user fails to enter a password length, this notify them that they need to answer the first prompt  
     if (!passLength) {
-        alert("You need to enter a length for your password silly!"); 
+        alert("You need to enter a length for your password"); 
       }
       // If the user fails to enter a number between 8 and 128, this will alert them that they need to choose a different number 
       else if (passLength < 8 || passLength > 128)
@@ -45,8 +45,23 @@ function writePassword() {
         passUpper = confirm("Do you want this password to include uppercase letters?");
       };
 
+      // Created an alert if the user doesn't choose any criteria for the password
       if (!passNumber && !passSymbol && !passLower && !passUpper) {
-
+        criteria = alert("You have to pick something to make your password")
+      } 
+      // Used concat to combine all the arrays if the user wants all options in the password
+      else if (passNumber && passSymbol && passLower && passUpper) {
+        criteria = number.concat(symbol, upperCase, lowerCase);
+      }
+      // Created else if statements for each of the possibilities if the user wants three of the four option, and used concat to combine each of those arrays
+      else if (passNumber && passSymbol && passLower && !passUpper) {
+        criteria = number.concat(symbol, lowerCase)
+      } else if (passNumber && passSymbol && !passLower && passUpper) {
+        criteria = number.concat(symbol, upperCase)
+      } else if (passNumber && !passSymbol && passLower && passUpper) {
+        criteria = number.concat(lowerCase, upperCase)
+      } else if (!passNumber && passSymbol && passLower && passUpper) {
+        criteria = symbol.concat(lowerCase, upperCase)
       }
   }
 
