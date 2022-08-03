@@ -90,13 +90,13 @@ function generatePassword() {
     }
 
     //For loop to choose random characters for the length requested by the user
-    for (let i = 0; i < passLength, i++;) {
+    for (var i = 0; i < passLength; i++) {
       var chooseCriteria = criteria[Math.floor(Math.random() * criteria.length)];
-      password.push(chooseCriteria);
+      console.log(chooseCriteria);
     }
   passwordText.value = password;
   }
 }
- console.log(password)
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
