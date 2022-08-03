@@ -47,21 +47,45 @@ function writePassword() {
 
       // Created an alert if the user doesn't choose any criteria for the password
       if (!passNumber && !passSymbol && !passLower && !passUpper) {
-        criteria = alert("You have to pick something to make your password")
+        criteria = alert("You have to pick something to make your password");
       } 
       // Used concat to combine all the arrays if the user wants all options in the password
       else if (passNumber && passSymbol && passLower && passUpper) {
         criteria = number.concat(symbol, upperCase, lowerCase);
       }
-      // Created else if statements for each of the possibilities if the user wants three of the four option, and used concat to combine each of those arrays
+      // Created else if statements for each of the possibilities if the user wants three of the four options, and used concat to combine each combination of the arrays
       else if (passNumber && passSymbol && passLower && !passUpper) {
-        criteria = number.concat(symbol, lowerCase)
+        criteria = number.concat(symbol, lowerCase);
       } else if (passNumber && passSymbol && !passLower && passUpper) {
-        criteria = number.concat(symbol, upperCase)
+        criteria = number.concat(symbol, upperCase);
       } else if (passNumber && !passSymbol && passLower && passUpper) {
-        criteria = number.concat(lowerCase, upperCase)
+        criteria = number.concat(lowerCase, upperCase);
       } else if (!passNumber && passSymbol && passLower && passUpper) {
-        criteria = symbol.concat(lowerCase, upperCase)
+        criteria = symbol.concat(lowerCase, upperCase);
+      }
+      // Created else if statements for each of the possibilities if the user wants two of the four options, and used concat to combine each combination of the arrays
+       else if (passNumber && !passSymbol && !passLower && passUpper) {
+        criteria = number.concat(upperCase);
+      } else if (passNumber && passSymbol && !passLower && !passUpper) {
+        criteria = number.concat(symbol);
+      } else if (passNumber && !passSymbol && passLower && !passUpper) {
+        criteria = number.concat(lowerCase);
+      } else if (!passNumber && passSymbol && !passLower && passUpper) {
+        criteria = symbol.concat(upperCase);
+      } else if (!passNumber && passSymbol && passLower && !passUpper) {
+        criteria = symbol.concat(lowerCase);
+      } else if (!passNumber && !passSymbol && passLower && passUpper) {
+        criteria = lowerCase.concat(upperCase);
+      }
+      // Created else if statements for each of the possibilities if the user wants one of the four options, and tagged it to the correct array
+      else if (passNumber && !passSymbol && !passLower && !passUpper) {
+        criteria = number;
+      } else if (!passNumber && passSymbol && !passLower && !passUpper) {
+        criteria = symbol;
+      } else if (!passNumber && !passSymbol && passLower && !passUpper) {
+        criteria = lowerCase;
+      } else if (!passNumber && !passSymbol && !passLower && passUpper) {
+        criteria = upperCase;
       }
   }
 
