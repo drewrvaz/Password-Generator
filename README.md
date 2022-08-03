@@ -8,3 +8,7 @@ To use this password generator... TALK ABOUT HOW TO USE HERE!!!
 
 ## MockUp
 INSERT SCREENSHOT HERE
+
+## Credits
+https://www.w3schools.com/js/js_popup.asp
+https://www.youtube.com/watch?v=iKo9pDKKHnc&t=262s
