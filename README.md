@@ -7,8 +7,7 @@ I wanted to fix broken code in this JavaScript document to create a random passw
 To use this password generator... TALK ABOUT HOW TO USE HERE!!!
 
 ## MockUp
-![](../MSU-VIRT-FSF-PT-07-2022-U-LOLC-ENTG/03-JavaScript/02-Challenge/Assets/03-javascript-homework-demo.png)
-
+Add screenshot here
 ## Credits
 https://www.w3schools.com/js/js_popup.asp
 https://www.youtube.com/watch?v=iKo9pDKKHnc&t=262s
