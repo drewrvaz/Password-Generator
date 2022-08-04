@@ -58,9 +58,9 @@ function generatePassword() {
     else if (passNumber && passSymbol && passLower && !passUpper) {
       criteria = number.concat(symbol, lowerCase);
     } else if (passNumber && passSymbol && !passLower && passUpper) {
-      criteria = number.concat(symbol, upperCase);
+      criteria = upperCase.concat(symbol, number);
     } else if (passNumber && !passSymbol && passLower && passUpper) {
-      criteria = number.concat(lowerCase, upperCase);
+      criteria = lowerCase.concat(number, upperCase);
     } else if (!passNumber && passSymbol && passLower && passUpper) {
       criteria = symbol.concat(lowerCase, upperCase);
     }
