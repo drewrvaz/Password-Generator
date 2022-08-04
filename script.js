@@ -90,14 +90,12 @@ function generatePassword() {
     }
 
     //For loop to choose random characters for the length requested by the user
-    for (var i = 0; i < passLength; i++) {
+    for (var i = 0; i < criteria.length; i++) {
       var chooseCriteria = criteria[Math.floor(Math.random() * criteria.length)];
-      console.log(chooseCriteria);
     }
     return chooseCriteria;
   }
   passwordText.value = password;
-  
 }
 
 // Add event listener to generate button
