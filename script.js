@@ -89,11 +89,14 @@ function generatePassword() {
       criteria = upperCase;
     }
 
-    //For loop to choose random characters for the length requested by the user
-    for (var i = 0; i < criteria.length; i++) {
-      var chooseCriteria = criteria[Math.floor(Math.random() * criteria.length)];
+    // Created a new variable that would contain the characters randomly selected from the arrays based on the user's choices
+    var randomPassword = [];
+    //For loop to choose random characters for the length requested by the user. randomPassword.push(chooseCriteria) pushes the characters from the arrays that were selected into the box holding the password
+    for (var i = 0; i < passLength; i++) {
+      var chooseCriteria = criteria[Math.floor(Math.random() * passLength)];
+      randomPassword.push(chooseCriteria);
     }
-    return chooseCriteria;
+    return randomPassword.join('');
   }
   passwordText.value = password;
 }
