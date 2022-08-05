@@ -93,7 +93,7 @@ function generatePassword() {
     var randomPassword = [];
     //For loop to choose random characters for the length requested by the user. randomPassword.push(chooseCriteria) pushes the characters from the arrays that were selected into the box holding the password
     for (var i = 0; i < passLength; i++) {
-      var chooseCriteria = criteria[Math.floor(Math.random() * passLength)];
+      var chooseCriteria = criteria[Math.floor(Math.random() * criteria.length)];
       randomPassword.push(chooseCriteria);
     }
     return randomPassword.join('');
